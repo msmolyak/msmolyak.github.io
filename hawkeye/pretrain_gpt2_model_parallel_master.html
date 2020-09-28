@@ -1,0 +1,368 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+.AlignLeft { text-align: left; }
+.AlignCenter { text-align: center; }
+.AlignRight { text-align: right; }
+.Wrap { white-space: nowrap; }
+body { font-family: sans-serif; font-size: 11pt; }
+img.AutoScale { max-width: 100%; max-height: 100%; }
+td { vertical-align: top; padding-left: 4px; padding-right: 4px; }
+
+tr.SectionGap td { font-size: 4px; border-left: none; border-top: none; border-bottom: 1px solid Black; border-right: 1px solid Black; }
+tr.SectionAll td { border-left: none; border-top: none; border-bottom: 1px solid Black; border-right: 1px solid Black; }
+tr.SectionBegin td { border-left: none; border-top: none; border-right: 1px solid Black; }
+tr.SectionEnd td { border-left: none; border-top: none; border-bottom: 1px solid Black; border-right: 1px solid Black; }
+tr.SectionMiddle td { border-left: none; border-top: none; border-right: 1px solid Black; }
+tr.SubsectionAll td { border-left: none; border-top: none; border-bottom: 1px solid Gray; border-right: 1px solid Black; }
+tr.SubsectionEnd td { border-left: none; border-top: none; border-bottom: 1px solid Gray; border-right: 1px solid Black; }
+table.fc { border-top: 1px solid Black; border-left: 1px solid Black; width: 100%; font-family: monospace; font-size: 10pt; }
+td.TextItemInsigMod { color: #000000; background-color: #EEEEFF; }
+td.TextItemInsigOrphan { color: #000000; background-color: #FAEEFF; }
+td.TextItemNum { color: #696969; background-color: #ECECEC; }
+td.TextItemSame { color: #000000; background-color: #FFFFFF; }
+td.TextItemSigMod { color: #000000; background-color: #FFE3E3; }
+td.TextItemSigOrphan { color: #000000; background-color: #F1E3FF; }
+.TextSegInsigDiff { color: #0000FF; }
+.TextSegReplacedDiff { color: #0000FF; font-style: italic; }
+.TextSegSigDiff { color: #FF0000; }
+td.TextItemInsigAdd { color: #000000; background-color: #EEEEFF; }
+td.TextItemInsigDel { color: #000000; background-color: #EEEEFF; text-decoration: line-through; }
+td.TextItemSigAdd { color: #000000; background-color: #FFE3E3; }
+td.TextItemSigDel { color: #000000; background-color: #FFE3E3; text-decoration: line-through; }
+.TextSegElementKeyword { font-weight: bold; }
+.TextSegElementIdentifier { }
+.TextSegElementNumber { color: #2E9269; }
+.TextSegElementString { color: #3A7726; }
+.TextSegElementEnvironment_32Variable { }
+.TextSegElementComment { color: #786A41; }
+.TextSegElementOperator { }
+</style>
+<title>File Comparison</title>
+</head>
+<body>
+File Comparison<br>
+Produced: 9/27/20 8:01:41 PM<br>
+&nbsp; &nbsp;
+<br>
+Mode:&nbsp; All, With Context, Ignoring Unimportant &nbsp;
+<br>
+Left file: /Users/msmolyak/Projects/Cora/Megatron-LM/scripts/pretrain_gpt2_model_parallel.sh &nbsp;
+<br>
+Right file: /Users/msmolyak/Projects/Cora/DeepSpeedExamples/Megatron-LM/scripts/pretrain_gpt2_model_parallel.sh &nbsp;
+<br>
+<table class="fc" cellspacing="0" cellpadding="0">
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">1</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">#! /bin/bash</span></td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">1</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">#! /bin/bash</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">2</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">2</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">3</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># Runs the &quot;345M&quot; parameter model</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">3</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># Runs the &quot;345M&quot; parameter model</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">4</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">4</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">5</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIdentifier">GPUS_PER_NODE</span><span class="TextSegElementOperator">=</span><span class="TextSegElementNumber">8</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">5</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIdentifier">GPUS_PER_NODE</span><span class="TextSegElementOperator">=</span><span class="TextSegElementNumber">8</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">6</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># Change for multinode config</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">6</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># Change for multinode config</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">7</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIdentifier">MASTER_ADDR</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">localhost</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">7</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIdentifier">MASTER_ADDR</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">localhost</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">8</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIdentifier">MASTER_PORT</span><span class="TextSegElementOperator">=</span><span class="TextSegElementNumber">6000</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">8</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIdentifier">MASTER_PORT</span><span class="TextSegElementOperator">=</span><span class="TextSegElementNumber">6000</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">9</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIdentifier">NNODES</span><span class="TextSegElementOperator">=</span><span class="TextSegElementNumber">1</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">9</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIdentifier">NNODES</span><span class="TextSegElementOperator">=</span><span class="TextSegElementNumber">1</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">10</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIdentifier">NODE_RANK</span><span class="TextSegElementOperator">=</span><span class="TextSegElementNumber">0</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">10</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIdentifier">NODE_RANK</span><span class="TextSegElementOperator">=</span><span class="TextSegElementNumber">0</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">11</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIdentifier">WORLD_SIZE</span><span class="TextSegElementOperator">=</span>$((<span class="TextSegElementEnvironment_32Variable">$GPUS_PER_NODE</span><span class="TextSegElementOperator">*</span><span class="TextSegElementEnvironment_32Variable">$NNODES</span>))</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">11</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIdentifier">WORLD_SIZE</span><span class="TextSegElementOperator">=</span>$((<span class="TextSegElementEnvironment_32Variable">$GPUS_PER_NODE</span><span class="TextSegElementOperator">*</span><span class="TextSegElementEnvironment_32Variable">$NNODES</span>))</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">12</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">12</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">13</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIdentifier">DISTRIBUTED_ARGS</span><span class="TextSegElementOperator">=</span><span class="TextSegElementString">&quot;--nproc_per_node $GPUS_PER_NODE --nnodes $NNODES --node_rank $NODE_RANK --master_addr $MASTER_ADDR --master_port $MASTER_PORT&quot;</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">13</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIdentifier">DISTRIBUTED_ARGS</span><span class="TextSegElementOperator">=</span><span class="TextSegElementString">&quot;--nproc_per_node $GPUS_PER_NODE --nnodes $NNODES --node_rank $NODE_RANK --master_addr $MASTER_ADDR --master_port $MASTER_PORT&quot;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">14</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">14</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">15</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIdentifier">python</span> <span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">m</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementKeyword">.</span><span class="TextSegElementIdentifier">distributed</span><span class="TextSegElementKeyword">.</span><span class="TextSegElementIdentifier">launch</span> <span class="TextSegElementEnvironment_32Variable">$DISTRIBUTED_ARGS</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">15</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIdentifier">python</span> <span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">m</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementKeyword">.</span><span class="TextSegElementIdentifier">distributed</span><span class="TextSegElementKeyword">.</span><span class="TextSegElementIdentifier">launch</span> <span class="TextSegElementEnvironment_32Variable">$DISTRIBUTED_ARGS</span> \</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">16</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementIdentifier">pretrain_gpt2</span><span class="TextSegElementKeyword">.</span><span class="TextSegElementIdentifier">py</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">16</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementIdentifier">pretrain_gpt2</span><span class="TextSegElementKeyword">.</span><span class="TextSegElementIdentifier">py</span> \</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">17</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">model</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">parallel</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">size</span> <span class="TextSegElementNumber">2</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">17</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">model</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">parallel</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">size</span> <span class="TextSegElementNumber">2</span> \</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">18</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">num</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">layers</span> <span class="TextSegElementNumber">24</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">18</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">num</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">layers</span> <span class="TextSegElementNumber">24</span> \</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">19</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">hidden</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">size</span> <span class="TextSegElementNumber">1024</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">19</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">hidden</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">size</span> <span class="TextSegElementNumber">1024</span> \</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">20</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">num</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">attention</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">heads</span> <span class="TextSegElementNumber">16</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">20</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">num</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">attention</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">heads</span> <span class="TextSegElementNumber">16</span> \</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">21</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">batch</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">size</span> <span class="TextSegElementNumber">8</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">21</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">batch</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">size</span> <span class="TextSegElementNumber">8</span> \</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">22</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">seq</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">length</span> <span class="TextSegElementNumber">1024</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">22</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">seq</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">length</span> <span class="TextSegElementNumber">1024</span> \</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">23</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">max</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">position</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">embeddings</span> <span class="TextSegElementNumber">1024</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">23</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">max</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">position</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">embeddings</span> <span class="TextSegElementNumber">1024</span> \</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">24</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">train</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">iters</span> <span class="TextSegElementNumber">320000</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">24</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">train</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">iters</span> <span class="TextSegElementNumber">320000</span> \</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">25</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">save</span> <span class="TextSegElementIdentifier">checkpoints</span><span class="TextSegElementOperator">/</span><span class="TextSegElementIdentifier">gpt2_345m_mp2</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">25</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">save</span> <span class="TextSegElementIdentifier">checkpoints</span><span class="TextSegElementOperator">/</span><span class="TextSegElementIdentifier">gpt2_345m_mp2</span> \</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">26</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">load</span> <span class="TextSegElementIdentifier">checkpoints</span><span class="TextSegElementOperator">/</span><span class="TextSegElementIdentifier">gpt2_345m_mp2</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">26</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">load</span> <span class="TextSegElementIdentifier">checkpoints</span><span class="TextSegElementOperator">/</span><span class="TextSegElementIdentifier">gpt2_345m_mp2</span> \</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">27</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">resume</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">dataloader</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">27</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">resume</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">dataloader</span> \</td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">28</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; --train-data w<span class="TextSegSigDiff">ikipedia</span> \</td>
+<td class="AlignCenter Wrap">&lt;&gt;</td>
+<td class="TextItemNum AlignRight Wrap">28</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; --train-data w<span class="TextSegSigDiff">ebt</span><span class="TextSegSigDiff">ext</span> \</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">29</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">lazy</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">loader</span> \</td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">29</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">lazy</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">loader</span> \</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">30</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">tokenizer</span><span class="TextSegElementOperator">-</span><span class="TextSegElementKeyword">type</span> <span class="TextSegElementIdentifier">GPT2BPETokenizer</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">30</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">tokenizer</span><span class="TextSegElementOperator">-</span><span class="TextSegElementKeyword">type</span> <span class="TextSegElementIdentifier">GPT2BPETokenizer</span> \</td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">31</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegSigDiff">--</span><span class="TextSegSigDiff">cache</span><span class="TextSegSigDiff">-</span><span class="TextSegSigDiff">dir</span> <span class="TextSegSigDiff">cache</span> <span class="TextSegSigDiff">\</span></td>
+<td class="AlignCenter Wrap">+-</td>
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">32</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">split</span> <span class="TextSegElementNumber">949</span><span class="TextSegElementOperator">,</span><span class="TextSegElementNumber">50</span><span class="TextSegElementOperator">,</span><span class="TextSegElementNumber">1</span> \</td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">31</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">split</span> <span class="TextSegElementNumber">949</span><span class="TextSegElementOperator">,</span><span class="TextSegElementNumber">50</span><span class="TextSegElementOperator">,</span><span class="TextSegElementNumber">1</span> \</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">33</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">distributed</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">backend</span> <span class="TextSegElementIdentifier">nccl</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">32</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">distributed</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">backend</span> <span class="TextSegElementIdentifier">nccl</span> \</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">34</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">lr</span> <span class="TextSegElementNumber">0.00015</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">33</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">lr</span> <span class="TextSegElementNumber">0.00015</span> \</td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">-+</td>
+<td class="TextItemNum AlignRight Wrap">34</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegSigDiff">--</span><span class="TextSegSigDiff">no</span><span class="TextSegSigDiff">-</span><span class="TextSegSigDiff">load</span><span class="TextSegSigDiff">-</span><span class="TextSegSigDiff">optim</span> <span class="TextSegSigDiff">\</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">35</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">lr</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">decay</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">style</span> <span class="TextSegElementIdentifier">cosine</span> \</td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">35</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">lr</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">decay</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">style</span> <span class="TextSegElementIdentifier">cosine</span> \</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">36</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">weight</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">decay</span> <span class="TextSegElementNumber">1</span><span class="TextSegElementIdentifier">e</span><span class="TextSegElementOperator">-</span><span class="TextSegElementNumber">2</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">36</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">weight</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">decay</span> <span class="TextSegElementNumber">1</span><span class="TextSegElementIdentifier">e</span><span class="TextSegElementOperator">-</span><span class="TextSegElementNumber">2</span> \</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">37</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">clip</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">grad</span> <span class="TextSegElementNumber">1.0</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">37</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">clip</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">grad</span> <span class="TextSegElementNumber">1.0</span> \</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">38</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">warmup</span> <span class="TextSegElementKeyword">.</span><span class="TextSegElementNumber">01</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">38</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">warmup</span> <span class="TextSegElementKeyword">.</span><span class="TextSegElementNumber">01</span> \</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">39</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">checkpoint</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">activations</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">39</td>
+<td class="TextItemSame Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegElementOperator">--</span><span class="TextSegElementIdentifier">checkpoint</span><span class="TextSegElementOperator">-</span><span class="TextSegElementIdentifier">activations</span> \</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">40</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; --fp16</td>
+<td class="AlignCenter Wrap">&lt;&gt;</td>
+<td class="TextItemNum AlignRight Wrap">40</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; --fp16 <span class="TextSegSigDiff">\</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">41</td>
+<td class="TextItemSigMod Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">41</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; <span class="TextSegSigDiff">--</span><span class="TextSegSigDiff">deepspeed</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">42</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">43</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">set</span> <span class="TextSegElementOperator">+</span><span class="TextSegElementIdentifier">x</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">42</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">set</span> <span class="TextSegElementOperator">+</span><span class="TextSegElementIdentifier">x</span></td>
+</tr>
+</table>
+<br>
+</body>
+</html>

@@ -1,0 +1,1578 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+.AlignLeft { text-align: left; }
+.AlignCenter { text-align: center; }
+.AlignRight { text-align: right; }
+.Wrap { white-space: nowrap; }
+body { font-family: sans-serif; font-size: 11pt; }
+img.AutoScale { max-width: 100%; max-height: 100%; }
+td { vertical-align: top; padding-left: 4px; padding-right: 4px; }
+
+tr.SectionGap td { font-size: 4px; border-left: none; border-top: none; border-bottom: 1px solid Black; border-right: 1px solid Black; }
+tr.SectionAll td { border-left: none; border-top: none; border-bottom: 1px solid Black; border-right: 1px solid Black; }
+tr.SectionBegin td { border-left: none; border-top: none; border-right: 1px solid Black; }
+tr.SectionEnd td { border-left: none; border-top: none; border-bottom: 1px solid Black; border-right: 1px solid Black; }
+tr.SectionMiddle td { border-left: none; border-top: none; border-right: 1px solid Black; }
+tr.SubsectionAll td { border-left: none; border-top: none; border-bottom: 1px solid Gray; border-right: 1px solid Black; }
+tr.SubsectionEnd td { border-left: none; border-top: none; border-bottom: 1px solid Gray; border-right: 1px solid Black; }
+table.fc { border-top: 1px solid Black; border-left: 1px solid Black; width: 100%; font-family: monospace; font-size: 10pt; }
+td.TextItemInsigMod { color: #000000; background-color: #EEEEFF; }
+td.TextItemInsigOrphan { color: #000000; background-color: #FAEEFF; }
+td.TextItemNum { color: #696969; background-color: #ECECEC; }
+td.TextItemSame { color: #000000; background-color: #FFFFFF; }
+td.TextItemSigMod { color: #000000; background-color: #FFE3E3; }
+td.TextItemSigOrphan { color: #000000; background-color: #F1E3FF; }
+.TextSegInsigDiff { color: #0000FF; }
+.TextSegReplacedDiff { color: #0000FF; font-style: italic; }
+.TextSegSigDiff { color: #FF0000; }
+td.TextItemInsigAdd { color: #000000; background-color: #EEEEFF; }
+td.TextItemInsigDel { color: #000000; background-color: #EEEEFF; text-decoration: line-through; }
+td.TextItemSigAdd { color: #000000; background-color: #FFE3E3; }
+td.TextItemSigDel { color: #000000; background-color: #FFE3E3; text-decoration: line-through; }
+.TextSegElementKeyword { font-weight: bold; }
+.TextSegElementIdentifier { }
+.TextSegElementString { color: #3A7726; }
+.TextSegElementComment { color: #786A41; }
+.TextSegElementOperator { }
+.TextSegElementIndentation { }
+</style>
+<title>File Comparison</title>
+</head>
+<body>
+File Comparison<br>
+Produced: 10/6/20 4:03:16 PM<br>
+&nbsp; &nbsp;
+<br>
+Mode:&nbsp; All, With Context, Ignoring Unimportant &nbsp;
+<br>
+Left file: /Users/msmolyak/Projects/Cora/DeepSpeedExamples/Megatron-LM/gpt2_data_loader.py &nbsp;
+<br>
+Right file: /Users/msmolyak/Projects/Cora/DeepSpeedExamplesISI/Megatron-LM/gpt2_data_loader.py &nbsp;
+<br>
+<table class="fc" cellspacing="0" cellpadding="0">
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">1</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># coding=utf-8</span></td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">1</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># coding=utf-8</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">2</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># Copyright (c) 2019, NVIDIA CORPORATION.&nbsp; All rights reserved.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">2</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># Copyright (c) 2019, NVIDIA CORPORATION.&nbsp; All rights reserved.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">3</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">#</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">3</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">#</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">4</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">4</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">5</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># you may not use this file except in compliance with the License.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">5</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># you may not use this file except in compliance with the License.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">6</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># You may obtain a copy of the License at</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">6</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># You may obtain a copy of the License at</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">7</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">#</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">7</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">#</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">8</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">#&nbsp; &nbsp;&nbsp; http://www.apache.org/licenses/LICENSE-2.0</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">8</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">#&nbsp; &nbsp;&nbsp; http://www.apache.org/licenses/LICENSE-2.0</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">9</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">#</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">9</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">#</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">10</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># Unless required by applicable law or agreed to in writing, software</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">10</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># Unless required by applicable law or agreed to in writing, software</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">11</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">11</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">12</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">12</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">13</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># See the License for the specific language governing permissions and</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">13</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># See the License for the specific language governing permissions and</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">14</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># limitations under the License.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">14</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># limitations under the License.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">15</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">15</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">16</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">json</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">16</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">json</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">17</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">os</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">17</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">os</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">18</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">18</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">19</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">numpy</span> <span class="TextSegElementKeyword">as</span> <span class="TextSegElementIdentifier">np</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">19</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">numpy</span> <span class="TextSegElementKeyword">as</span> <span class="TextSegElementIdentifier">np</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">20</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">torch</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">20</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">torch</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">21</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">from</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">multiprocessing</span> <span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">Lock</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">21</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">from</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">multiprocessing</span> <span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">Lock</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">22</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">from</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">utils</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">data</span> <span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">Dataset</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">22</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">from</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">utils</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">data</span> <span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">Dataset</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">23</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">23</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">24</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">mpu</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">24</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">mpu</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">25</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">from</span> <span class="TextSegElementIdentifier">data_utils</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">samplers</span> <span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">DistributedBatchSampler</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">25</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">from</span> <span class="TextSegElementIdentifier">data_utils</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">samplers</span> <span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">DistributedBatchSampler</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">26</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">from</span> <span class="TextSegElementIdentifier">data_utils</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">tokenization_gpt2</span> <span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">GPT2Tokenizer</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">26</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">from</span> <span class="TextSegElementIdentifier">data_utils</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">tokenization_gpt2</span> <span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">GPT2Tokenizer</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">27</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">27</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">28</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">28</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">29</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">make_gpt2_dataloaders</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">)</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">29</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">make_gpt2_dataloaders</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">)</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">30</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">30</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">31</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp;&nbsp; # Input parameters.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">31</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp;&nbsp; # Input parameters.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">32</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">input_data_sizes_file</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">input_data_sizes_file</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">32</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">input_data_sizes_file</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">input_data_sizes_file</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">33</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">seq_length</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">33</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">seq_length</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">34</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">initial_seed</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seed</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">34</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">initial_seed</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seed</span></td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">-+</td>
+<td class="TextItemNum AlignRight Wrap">35</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp;&nbsp; </span><span class="TextSegSigDiff">shuffle</span> <span class="TextSegSigDiff">=</span> <span class="TextSegSigDiff">args</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">shuffle</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">35</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">36</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">36</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp;&nbsp; # Data parallel arguments.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">37</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp;&nbsp; # Data parallel arguments.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">37</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">world_size</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">mpu</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">get_data_parallel_world_size</span><span class="TextSegElementOperator">()</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">38</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">world_size</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">mpu</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">get_data_parallel_world_size</span><span class="TextSegElementOperator">()</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">38</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">rank</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">mpu</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">get_data_parallel_rank</span><span class="TextSegElementOperator">()</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">39</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">rank</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">mpu</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">get_data_parallel_rank</span><span class="TextSegElementOperator">()</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">39</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">global_batch_size</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">batch_size</span> <span class="TextSegElementOperator">*</span> <span class="TextSegElementIdentifier">world_size</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">40</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">global_batch_size</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">batch_size</span> <span class="TextSegElementOperator">*</span> <span class="TextSegElementIdentifier">world_size</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">40</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">num_workers</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">num_workers</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">41</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">num_workers</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">num_workers</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">41</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">42</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">42</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">make_data_loader_</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">data_path</span><span class="TextSegElementOperator">)</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">43</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">make_data_loader_</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">data_path</span><span class="TextSegElementOperator">)</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">43</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Build the dataset.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">44</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Build the dataset.</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">44</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">dataset</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">GPT2Dataset</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">data_path</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">input_data_sizes_file</span><span class="TextSegElementOperator">,</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">45</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">dataset</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">GPT2Dataset</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">data_path</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">input_data_sizes_file</span><span class="TextSegElementOperator">,</span></td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">45</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; seq_length, initial_seed)</td>
+<td class="AlignCenter Wrap">&lt;&gt;</td>
+<td class="TextItemNum AlignRight Wrap">46</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; seq_length, initial_seed<span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">shuffle</span>)</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">46</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Use a simple sampler with distributed batch sampler.</span></td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">47</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Use a simple sampler with distributed batch sampler.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">47</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">sampler</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">utils</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">data</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">SequentialSampler</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">dataset</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">48</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">sampler</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">utils</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">data</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">SequentialSampler</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">dataset</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">48</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">batch_sampler</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">DistributedBatchSampler</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">sampler</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">sampler</span><span class="TextSegElementOperator">,</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">49</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">batch_sampler</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">DistributedBatchSampler</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">sampler</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">sampler</span><span class="TextSegElementOperator">,</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">49</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">batch_size</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">global_batch_size</span><span class="TextSegElementOperator">,</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">50</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">batch_size</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">global_batch_size</span><span class="TextSegElementOperator">,</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">50</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">drop_last</span><span class="TextSegElementOperator">=</span><span class="TextSegElementKeyword">True</span><span class="TextSegElementOperator">,</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">51</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">drop_last</span><span class="TextSegElementOperator">=</span><span class="TextSegElementKeyword">True</span><span class="TextSegElementOperator">,</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">51</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">rank</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">rank</span><span class="TextSegElementOperator">,</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">52</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">rank</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">rank</span><span class="TextSegElementOperator">,</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">52</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">world_size</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">world_size</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">53</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">world_size</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">world_size</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">53</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Torch dataloader.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">54</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Torch dataloader.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">54</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">return</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">utils</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">data</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">DataLoader</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">dataset</span><span class="TextSegElementOperator">,</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">55</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">return</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">utils</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">data</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">DataLoader</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">dataset</span><span class="TextSegElementOperator">,</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">55</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegElementIdentifier">batch_sampler</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">batch_sampler</span><span class="TextSegElementOperator">,</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">56</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegElementIdentifier">batch_sampler</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">batch_sampler</span><span class="TextSegElementOperator">,</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">56</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegElementIdentifier">num_workers</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">num_workers</span><span class="TextSegElementOperator">,</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">57</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegElementIdentifier">num_workers</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">num_workers</span><span class="TextSegElementOperator">,</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">57</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegElementIdentifier">pin_memory</span><span class="TextSegElementOperator">=</span><span class="TextSegElementKeyword">True</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">58</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegElementIdentifier">pin_memory</span><span class="TextSegElementOperator">=</span><span class="TextSegElementKeyword">True</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">58</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">59</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">59</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">train</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">make_data_loader_</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">train_data_path</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">60</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">train</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">make_data_loader_</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">train_data_path</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">60</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">valid</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">make_data_loader_</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">val_data_path</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">61</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">valid</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">make_data_loader_</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">val_data_path</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">61</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">test</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">make_data_loader_</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">test_data_path</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">62</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">test</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">make_data_loader_</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">test_data_path</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">62</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">63</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">63</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">do_train</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">False</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">64</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">do_train</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">False</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">64</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">do_valid</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">False</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">65</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">do_valid</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">False</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">65</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">do_test</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">False</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">66</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">do_test</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">False</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">66</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">67</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">67</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">train</span> <span class="TextSegElementKeyword">is</span> <span class="TextSegElementKeyword">not</span> <span class="TextSegElementKeyword">None</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">68</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">train</span> <span class="TextSegElementKeyword">is</span> <span class="TextSegElementKeyword">not</span> <span class="TextSegElementKeyword">None</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">68</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">do_train</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">True</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">69</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">do_train</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">True</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">69</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">valid</span> <span class="TextSegElementKeyword">is</span> <span class="TextSegElementKeyword">not</span> <span class="TextSegElementKeyword">None</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">70</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">valid</span> <span class="TextSegElementKeyword">is</span> <span class="TextSegElementKeyword">not</span> <span class="TextSegElementKeyword">None</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">70</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">do_valid</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">True</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">71</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">do_valid</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">True</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">71</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">test</span> <span class="TextSegElementKeyword">is</span> <span class="TextSegElementKeyword">not</span> <span class="TextSegElementKeyword">None</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">72</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">test</span> <span class="TextSegElementKeyword">is</span> <span class="TextSegElementKeyword">not</span> <span class="TextSegElementKeyword">None</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">72</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">do_test</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">True</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">73</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">do_test</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">True</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">73</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">74</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">74</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp;&nbsp; # Tokenizer.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">75</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp;&nbsp; # Tokenizer.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">75</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">tokenizer</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">GPT2Tokenizer</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">from_pretrained</span><span class="TextSegElementOperator">(</span><span class="TextSegElementString">'gpt2'</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">cache_dir</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">cache_dir</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">76</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">tokenizer</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">GPT2Tokenizer</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">from_pretrained</span><span class="TextSegElementOperator">(</span><span class="TextSegElementString">'gpt2'</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">cache_dir</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">args</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">cache_dir</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">76</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">eod_token</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">tokenizer</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">encoder</span><span class="TextSegElementOperator">[</span><span class="TextSegElementString">'&lt;|endoftext|&gt;'</span><span class="TextSegElementOperator">]</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">77</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">eod_token</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">tokenizer</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">encoder</span><span class="TextSegElementOperator">[</span><span class="TextSegElementString">'&lt;|endoftext|&gt;'</span><span class="TextSegElementOperator">]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">77</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">num_tokens</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">eod_token</span> <span class="TextSegElementOperator">+</span> 1</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">78</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementIdentifier">num_tokens</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">eod_token</span> <span class="TextSegElementOperator">+</span> 1</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">78</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">79</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">79</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">return</span> <span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">train</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">valid</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">test</span><span class="TextSegElementOperator">),</span> <span class="TextSegElementIdentifier">num_tokens</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">eod_token</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">80</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">return</span> <span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">train</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">valid</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">test</span><span class="TextSegElementOperator">),</span> <span class="TextSegElementIdentifier">num_tokens</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">eod_token</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">80</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">81</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">81</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">82</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">82</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">class</span> <span class="TextSegElementIdentifier">GPT2Dataset</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">Dataset</span><span class="TextSegElementOperator">)</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">83</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">class</span> <span class="TextSegElementIdentifier">GPT2Dataset</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">Dataset</span><span class="TextSegElementOperator">)</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">83</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">84</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">84</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">__init__</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">data_path</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">sizes_filename</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">seq_length</span><span class="TextSegElementOperator">,</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">85</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">__init__</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">data_path</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">sizes_filename</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">seq_length</span><span class="TextSegElementOperator">,</span></td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">85</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; initial_seed, max_epochs=100):</td>
+<td class="AlignCenter Wrap">&lt;&gt;</td>
+<td class="TextItemNum AlignRight Wrap">86</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; initial_seed, max_epochs=100<span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">shuffle</span><span class="TextSegSigDiff">=</span><span class="TextSegSigDiff">True</span>):</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">86</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Input parameters.</span></td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">87</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Input parameters.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">87</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">data_path</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">data_path</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">88</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">data_path</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">data_path</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">88</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">sizes_filename</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">sizes_filename</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">89</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">sizes_filename</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">sizes_filename</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">89</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">seq_length</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">90</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">seq_length</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">90</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">initial_seed</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">initial_seed</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">91</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">initial_seed</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">initial_seed</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">91</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">max_epochs</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">max_epochs</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">92</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">max_epochs</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">max_epochs</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">92</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Lock for building the dataset.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">93</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Lock for building the dataset.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">93</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">lock</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">Lock</span><span class="TextSegElementOperator">()</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">94</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">lock</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">Lock</span><span class="TextSegElementOperator">()</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">94</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">95</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">95</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Shard stuff.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">96</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Shard stuff.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">96</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Dictionary from shard nameto its size (number of element).</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">97</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Dictionary from shard nameto its size (number of element).</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">97</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">master_shard_size_dict</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">None</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">98</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">master_shard_size_dict</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">None</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">98</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Dictionary from shard name to modified size so it is</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">99</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Dictionary from shard name to modified size so it is</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">99</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # divisible by self.seq_length.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">100</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # divisible by self.seq_length.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">100</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shard_size_dict</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">None</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">101</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shard_size_dict</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">None</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">101</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Long array (self.max_epochs * num-shards) populated</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">102</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Long array (self.max_epochs * num-shards) populated</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">102</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # randomly with shard names.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">103</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # randomly with shard names.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">103</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">None</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">104</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">None</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">104</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Start index of the data for a shard.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">105</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Start index of the data for a shard.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">105</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_start_index</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">None</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">106</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_start_index</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">None</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">106</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">build_shard_mappings_</span><span class="TextSegElementOperator">()</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">107</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">build_shard_mappings_</span><span class="TextSegElementOperator">()</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">107</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">data_length</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_start_index</span><span class="TextSegElementOperator">[-</span>1<span class="TextSegElementOperator">]</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">108</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">data_length</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_start_index</span><span class="TextSegElementOperator">[-</span>1<span class="TextSegElementOperator">]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">108</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">109</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">109</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Data.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">110</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Data.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">110</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_data</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementOperator">[</span><span class="TextSegElementKeyword">None</span><span class="TextSegElementOperator">]*</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">size</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">111</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_data</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementOperator">[</span><span class="TextSegElementKeyword">None</span><span class="TextSegElementOperator">]*</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">size</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">111</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_sample_index</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementOperator">[</span><span class="TextSegElementKeyword">None</span><span class="TextSegElementOperator">]*</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">size</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">112</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_sample_index</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementOperator">[</span><span class="TextSegElementKeyword">None</span><span class="TextSegElementOperator">]*</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">size</span></td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">-+</td>
+<td class="TextItemNum AlignRight Wrap">113</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">shuffle</span> <span class="TextSegSigDiff">=</span> <span class="TextSegSigDiff">shuffle</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">112</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">114</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">113</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">__len__</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">)</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">115</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">__len__</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">)</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">114</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">return</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">data_length</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">116</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">return</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">data_length</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">115</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">117</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">116</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">__getitem__</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">idx</span><span class="TextSegElementOperator">)</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">118</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">__getitem__</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">idx</span><span class="TextSegElementOperator">)</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">117</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Find which shard we need.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">119</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Find which shard we need.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">118</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">shard_index</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">searchsorted</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_start_index</span><span class="TextSegElementOperator">,</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">120</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">shard_index</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">searchsorted</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_start_index</span><span class="TextSegElementOperator">,</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">119</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">idx</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">side</span><span class="TextSegElementOperator">=</span><span class="TextSegElementString">'right'</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementOperator">-</span> 1</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">121</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">idx</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">side</span><span class="TextSegElementOperator">=</span><span class="TextSegElementString">'right'</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementOperator">-</span> 1</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">120</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # data index in the shard.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">122</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # data index in the shard.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">121</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">data_idx</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">idx</span> <span class="TextSegElementOperator">-</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_start_index</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">]</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">123</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">data_idx</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">idx</span> <span class="TextSegElementOperator">-</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_start_index</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">122</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Load the shard if it is not in memory.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">124</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Load the shard if it is not in memory.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">123</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; #self.lock.acquire()</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">125</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; #self.lock.acquire()</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">124</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_data</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">]</span> <span class="TextSegElementKeyword">is</span> <span class="TextSegElementKeyword">None</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">126</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_data</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">]</span> <span class="TextSegElementKeyword">is</span> <span class="TextSegElementKeyword">None</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">125</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">print</span><span class="TextSegElementOperator">(</span><span class="TextSegElementString">'global rank {} is building data for shard index {} ...'</span><span class="TextSegElementOperator">.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">127</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">print</span><span class="TextSegElementOperator">(</span><span class="TextSegElementString">'global rank {} is building data for shard index {} ...'</span><span class="TextSegElementOperator">.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">126</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">format</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">distributed</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">get_rank</span><span class="TextSegElementOperator">(),</span> <span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">))</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">128</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">format</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">distributed</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">get_rank</span><span class="TextSegElementOperator">(),</span> <span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">))</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">127</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">build_dataset_</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">129</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">build_dataset_</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">128</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; #assert self.shards_data[shard_index] is not None</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">130</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; #assert self.shards_data[shard_index] is not None</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">129</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; #self.lock.release()</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">131</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; #self.lock.release()</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">130</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Start index.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">132</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Start index.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">131</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">start_index</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_sample_index</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">][</span><span class="TextSegElementIdentifier">data_idx</span><span class="TextSegElementOperator">]</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">133</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">start_index</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_sample_index</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">][</span><span class="TextSegElementIdentifier">data_idx</span><span class="TextSegElementOperator">]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">132</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Add one for label shift.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">134</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Add one for label shift.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">133</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">end_index</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">start_index</span> <span class="TextSegElementOperator">+</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span> <span class="TextSegElementOperator">+</span> 1</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">135</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">end_index</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">start_index</span> <span class="TextSegElementOperator">+</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span> <span class="TextSegElementOperator">+</span> 1</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">134</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">data</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_data</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">][</span><span class="TextSegElementIdentifier">start_index</span>:<span class="TextSegElementIdentifier">end_index</span><span class="TextSegElementOperator">]</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">136</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">data</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_data</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">][</span><span class="TextSegElementIdentifier">start_index</span>:<span class="TextSegElementIdentifier">end_index</span><span class="TextSegElementOperator">]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">135</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">return</span> <span class="TextSegElementOperator">{</span><span class="TextSegElementString">'text'</span>: <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">array</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">data</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">dtype</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">int64</span><span class="TextSegElementOperator">)}</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">137</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">return</span> <span class="TextSegElementOperator">{</span><span class="TextSegElementString">'text'</span>: <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">array</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">data</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">dtype</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">int64</span><span class="TextSegElementOperator">)}</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">136</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">138</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">137</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">build_dataset_</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">)</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">139</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">build_dataset_</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">)</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">138</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Garbage collect so we don't use a lot of memory.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">140</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Garbage collect so we don't use a lot of memory.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">139</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Leave the last one in case other threads have not catche up yet.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">141</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Leave the last one in case other threads have not catche up yet.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">140</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; #for i in range(shard_index - 1):</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">142</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; #for i in range(shard_index - 1):</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">141</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">for</span> <span class="TextSegElementIdentifier">i</span> <span class="TextSegElementKeyword">in</span> <span class="TextSegElementIdentifier">range</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">)</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">143</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">for</span> <span class="TextSegElementIdentifier">i</span> <span class="TextSegElementKeyword">in</span> <span class="TextSegElementIdentifier">range</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">)</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">142</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_data</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">i</span><span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">None</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">144</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_data</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">i</span><span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">None</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">143</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_sample_index</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">i</span><span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">None</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">145</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_sample_index</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">i</span><span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">None</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">144</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Read the shard.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">146</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Read the shard.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">145</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">filename</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">os</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">path</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">join</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">data_path</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">])</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">147</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">filename</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">os</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">path</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">join</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">data_path</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">])</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">146</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">print</span><span class="TextSegElementOperator">(</span><span class="TextSegElementString">'loading {}'</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">format</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">filename</span><span class="TextSegElementOperator">))</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">148</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">print</span><span class="TextSegElementOperator">(</span><span class="TextSegElementString">'loading {}'</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">format</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">filename</span><span class="TextSegElementOperator">))</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">147</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">data</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">load</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">filename</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">allow_pickle</span><span class="TextSegElementOperator">=</span><span class="TextSegElementKeyword">True</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">149</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">data</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">load</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">filename</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">allow_pickle</span><span class="TextSegElementOperator">=</span><span class="TextSegElementKeyword">True</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">148</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Shuffle the data</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">150</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Shuffle the data</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">149</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">rng</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">random</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">RandomState</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">initial_seed</span> <span class="TextSegElementOperator">+</span> <span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">151</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">rng</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">random</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">RandomState</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">initial_seed</span> <span class="TextSegElementOperator">+</span> <span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&lt;&gt;</td>
+<td class="TextItemNum AlignRight Wrap">152</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">if</span> <span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">shuffle</span><span class="TextSegSigDiff">:</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">150</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; rng.shuffle(data)</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">153</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<span class="TextSegSigDiff">&nbsp; &nbsp; </span>rng.shuffle(data)</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">154</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">151</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Flatten.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">155</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Flatten.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">152</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">data</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">hstack</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">data</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">156</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">data</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">hstack</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">data</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">153</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">size</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">data</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shape</span><span class="TextSegElementOperator">[</span>0<span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">-</span> 1<span class="TextSegElementOperator">)</span> <span class="TextSegElementOperator">//</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">157</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">size</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">data</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shape</span><span class="TextSegElementOperator">[</span>0<span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">-</span> 1<span class="TextSegElementOperator">)</span> <span class="TextSegElementOperator">//</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">154</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">last_index</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">size</span> <span class="TextSegElementOperator">*</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span> <span class="TextSegElementOperator">+</span> 1</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">158</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">last_index</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">size</span> <span class="TextSegElementOperator">*</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span> <span class="TextSegElementOperator">+</span> 1</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">155</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">data</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">data</span><span class="TextSegElementOperator">[</span>0:<span class="TextSegElementIdentifier">last_index</span><span class="TextSegElementOperator">]</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">159</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">data</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">data</span><span class="TextSegElementOperator">[</span>0:<span class="TextSegElementIdentifier">last_index</span><span class="TextSegElementOperator">]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">156</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_data</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">data</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">160</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_data</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">data</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">157</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">indices</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">arange</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">size</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementOperator">*</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">161</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">indices</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">arange</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">size</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementOperator">*</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&lt;&gt;</td>
+<td class="TextItemNum AlignRight Wrap">162</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">if</span> <span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">shuffle</span><span class="TextSegSigDiff">:</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">158</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; rng.shuffle(indices)</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">163</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<span class="TextSegSigDiff">&nbsp; &nbsp; </span>rng.shuffle(indices)</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">159</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_sample_index</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">indices</span></td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">164</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_sample_index</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard_index</span><span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">indices</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">160</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">165</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">161</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">build_shard_mappings_</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">)</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">166</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">build_shard_mappings_</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">)</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">162</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Load the sizes file.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">167</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Load the sizes file.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">163</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">sizes_filename</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">os</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">path</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">join</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">data_path</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">sizes_filename</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">168</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">sizes_filename</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">os</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">path</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">join</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">data_path</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">sizes_filename</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">164</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">distributed</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">get_rank</span><span class="TextSegElementOperator">()</span> <span class="TextSegElementOperator">==</span> 0:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">169</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">distributed</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">get_rank</span><span class="TextSegElementOperator">()</span> <span class="TextSegElementOperator">==</span> 0:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">165</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">print</span><span class="TextSegElementOperator">(</span><span class="TextSegElementString">' &gt; loading sizes from {}'</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">format</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">sizes_filename</span><span class="TextSegElementOperator">))</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">170</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">print</span><span class="TextSegElementOperator">(</span><span class="TextSegElementString">' &gt; loading sizes from {}'</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">format</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">sizes_filename</span><span class="TextSegElementOperator">))</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">166</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">with</span> <span class="TextSegElementIdentifier">open</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">sizes_filename</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementString">'r'</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementKeyword">as</span> <span class="TextSegElementIdentifier">f</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">171</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">with</span> <span class="TextSegElementIdentifier">open</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">sizes_filename</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementString">'r'</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementKeyword">as</span> <span class="TextSegElementIdentifier">f</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">167</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">master_shard_size_dict</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">json</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">load</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">f</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">172</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">master_shard_size_dict</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">json</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">load</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">f</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">168</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">distributed</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">get_rank</span><span class="TextSegElementOperator">()</span> <span class="TextSegElementOperator">==</span> 0:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">173</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">distributed</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">get_rank</span><span class="TextSegElementOperator">()</span> <span class="TextSegElementOperator">==</span> 0:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">169</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">print</span><span class="TextSegElementOperator">(</span><span class="TextSegElementString">'&nbsp;&nbsp; found {} shards'</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">format</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">len</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">master_shard_size_dict</span><span class="TextSegElementOperator">)))</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">174</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">print</span><span class="TextSegElementOperator">(</span><span class="TextSegElementString">'&nbsp;&nbsp; found {} shards'</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">format</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">len</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">master_shard_size_dict</span><span class="TextSegElementOperator">)))</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">170</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Adjust sizes to be a multiple of seq_length.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">175</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Adjust sizes to be a multiple of seq_length.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">171</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shard_size_dict</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">master_shard_size_dict</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">copy</span><span class="TextSegElementOperator">()</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">176</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shard_size_dict</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">master_shard_size_dict</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">copy</span><span class="TextSegElementOperator">()</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">172</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">total_samples</span> <span class="TextSegElementOperator">=</span> 0</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">177</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">total_samples</span> <span class="TextSegElementOperator">=</span> 0</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">173</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">for</span> <span class="TextSegElementIdentifier">shard</span> <span class="TextSegElementKeyword">in</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shard_size_dict</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">178</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">for</span> <span class="TextSegElementIdentifier">shard</span> <span class="TextSegElementKeyword">in</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shard_size_dict</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">174</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">size</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shard_size_dict</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard</span><span class="TextSegElementOperator">]</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">179</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">size</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shard_size_dict</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard</span><span class="TextSegElementOperator">]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">175</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">size</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementOperator">((</span><span class="TextSegElementIdentifier">size</span> <span class="TextSegElementOperator">-</span> 1<span class="TextSegElementOperator">)</span> <span class="TextSegElementOperator">//</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementOperator">*</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">180</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">size</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementOperator">((</span><span class="TextSegElementIdentifier">size</span> <span class="TextSegElementOperator">-</span> 1<span class="TextSegElementOperator">)</span> <span class="TextSegElementOperator">//</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementOperator">*</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">176</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">total_samples</span> <span class="TextSegElementOperator">+=</span> <span class="TextSegElementIdentifier">size</span> <span class="TextSegElementOperator">//</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">181</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">total_samples</span> <span class="TextSegElementOperator">+=</span> <span class="TextSegElementIdentifier">size</span> <span class="TextSegElementOperator">//</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">177</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shard_size_dict</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard</span><span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">size</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">182</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shard_size_dict</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard</span><span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">size</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">178</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">distributed</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">get_rank</span><span class="TextSegElementOperator">()</span> <span class="TextSegElementOperator">==</span> 0:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">183</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">distributed</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">get_rank</span><span class="TextSegElementOperator">()</span> <span class="TextSegElementOperator">==</span> 0:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">179</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">print</span><span class="TextSegElementOperator">(</span><span class="TextSegElementString">'&nbsp;&nbsp; found {} samples in the dataset'</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">format</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">total_samples</span><span class="TextSegElementOperator">))</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">184</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">print</span><span class="TextSegElementOperator">(</span><span class="TextSegElementString">'&nbsp;&nbsp; found {} samples in the dataset'</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">format</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">total_samples</span><span class="TextSegElementOperator">))</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">180</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Build a list of shards.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">185</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Build a list of shards.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">181</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">shards_</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">sort</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">array</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">list</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shard_size_dict</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">keys</span><span class="TextSegElementOperator">())))</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">186</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">shards_</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">sort</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">array</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">list</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shard_size_dict</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">keys</span><span class="TextSegElementOperator">())))</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">182</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">rng</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">random</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">RandomState</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">initial_seed</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">187</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">rng</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">random</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">RandomState</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">initial_seed</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">183</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">copy</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">shards_</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">188</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">copy</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">shards_</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">184</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">rng</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shuffle</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">189</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">rng</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shuffle</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">190</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">185</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">for</span> <span class="TextSegElementIdentifier">i</span> <span class="TextSegElementKeyword">in</span> <span class="TextSegElementIdentifier">range</span><span class="TextSegElementOperator">(</span>1<span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">max_epochs</span><span class="TextSegElementOperator">)</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">191</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">for</span> <span class="TextSegElementIdentifier">i</span> <span class="TextSegElementKeyword">in</span> <span class="TextSegElementIdentifier">range</span><span class="TextSegElementOperator">(</span>1<span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">max_epochs</span><span class="TextSegElementOperator">)</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">186</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">shards_c</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">copy</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">shards_</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">192</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">shards_c</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">copy</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">shards_</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">187</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">rng</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shuffle</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">shards_c</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">193</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">rng</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shuffle</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">shards_c</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">188</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">append</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">shards_c</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">194</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">append</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">shards_c</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">189</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Build the global indexing.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">195</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # Build the global indexing.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">190</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_start_index</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">zeros</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">size</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">dtype</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">int</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">196</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_start_index</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">zeros</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">size</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">dtype</span><span class="TextSegElementOperator">=</span><span class="TextSegElementIdentifier">np</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">int</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">191</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_start_index</span><span class="TextSegElementOperator">[</span>0<span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">=</span> 0</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">197</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_start_index</span><span class="TextSegElementOperator">[</span>0<span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">=</span> 0</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">192</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">for</span> <span class="TextSegElementIdentifier">i</span> <span class="TextSegElementKeyword">in</span> <span class="TextSegElementIdentifier">range</span><span class="TextSegElementOperator">(</span>1<span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">size</span><span class="TextSegElementOperator">)</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">198</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">for</span> <span class="TextSegElementIdentifier">i</span> <span class="TextSegElementKeyword">in</span> <span class="TextSegElementIdentifier">range</span><span class="TextSegElementOperator">(</span>1<span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">size</span><span class="TextSegElementOperator">)</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">193</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">shard</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">str</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">i</span><span class="TextSegElementOperator">-</span>1<span class="TextSegElementOperator">])</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">199</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">shard</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">str</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_name</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">i</span><span class="TextSegElementOperator">-</span>1<span class="TextSegElementOperator">])</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">194</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">size</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shard_size_dict</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard</span><span class="TextSegElementOperator">]</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">200</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">size</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shard_size_dict</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">shard</span><span class="TextSegElementOperator">]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">195</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_start_index</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">i</span><span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_start_index</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">i</span><span class="TextSegElementOperator">-</span>1<span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">+</span> \</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">201</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_start_index</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">i</span><span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">shards_start_index</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">i</span><span class="TextSegElementOperator">-</span>1<span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">+</span> \</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">196</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegElementIdentifier">size</span> <span class="TextSegElementOperator">//</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">202</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegElementIdentifier">size</span> <span class="TextSegElementOperator">//</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">seq_length</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">197</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">203</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">198</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">'''</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">204</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">'''</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">199</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">if __name__ == '__main__':</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">205</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">if __name__ == '__main__':</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">200</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">206</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">201</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">&nbsp;&nbsp;&nbsp; print('gpt2 data loader ...')</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">207</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">&nbsp;&nbsp;&nbsp; print('gpt2 data loader ...')</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">202</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">&nbsp;&nbsp;&nbsp; path = '/raid/mshoeybi/data/gpt2/adlr/reddit_all_ftfy_lg200/npys'</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">208</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">&nbsp;&nbsp;&nbsp; path = '/raid/mshoeybi/data/gpt2/adlr/reddit_all_ftfy_lg200/npys'</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">203</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">209</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">204</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">&nbsp;&nbsp;&nbsp; dataset = GPT2Dataset(path, 'sizes.txt', 1024, 1234, 100)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">210</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">&nbsp;&nbsp;&nbsp; dataset = GPT2Dataset(path, 'sizes.txt', 1024, 1234, 100)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">205</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">&nbsp;&nbsp;&nbsp; print('dataset contains {} samples'.format(dataset.data_length))</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">211</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">&nbsp;&nbsp;&nbsp; print('dataset contains {} samples'.format(dataset.data_length))</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">206</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">212</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">207</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">&nbsp;&nbsp;&nbsp; for i in range(len(dataset)):</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">213</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">&nbsp;&nbsp;&nbsp; for i in range(len(dataset)):</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">208</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; if i % 512000 == 0:</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">214</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; if i % 512000 == 0:</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">209</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; print(i)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">215</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; print(i)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">210</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; data = dataset[i]</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">216</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; data = dataset[i]</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">211</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">'''</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">217</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">'''</span></td>
+</tr>
+</table>
+<br>
+</body>
+</html>

@@ -1,0 +1,878 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+.AlignLeft { text-align: left; }
+.AlignCenter { text-align: center; }
+.AlignRight { text-align: right; }
+.Wrap { white-space: nowrap; }
+body { font-family: sans-serif; font-size: 11pt; }
+img.AutoScale { max-width: 100%; max-height: 100%; }
+td { vertical-align: top; padding-left: 4px; padding-right: 4px; }
+
+tr.SectionGap td { font-size: 4px; border-left: none; border-top: none; border-bottom: 1px solid Black; border-right: 1px solid Black; }
+tr.SectionAll td { border-left: none; border-top: none; border-bottom: 1px solid Black; border-right: 1px solid Black; }
+tr.SectionBegin td { border-left: none; border-top: none; border-right: 1px solid Black; }
+tr.SectionEnd td { border-left: none; border-top: none; border-bottom: 1px solid Black; border-right: 1px solid Black; }
+tr.SectionMiddle td { border-left: none; border-top: none; border-right: 1px solid Black; }
+tr.SubsectionAll td { border-left: none; border-top: none; border-bottom: 1px solid Gray; border-right: 1px solid Black; }
+tr.SubsectionEnd td { border-left: none; border-top: none; border-bottom: 1px solid Gray; border-right: 1px solid Black; }
+table.fc { border-top: 1px solid Black; border-left: 1px solid Black; width: 100%; font-family: monospace; font-size: 10pt; }
+td.TextItemInsigMod { color: #000000; background-color: #EEEEFF; }
+td.TextItemInsigOrphan { color: #000000; background-color: #FAEEFF; }
+td.TextItemNum { color: #696969; background-color: #ECECEC; }
+td.TextItemSame { color: #000000; background-color: #FFFFFF; }
+td.TextItemSigMod { color: #000000; background-color: #FFE3E3; }
+td.TextItemSigOrphan { color: #000000; background-color: #F1E3FF; }
+.TextSegInsigDiff { color: #0000FF; }
+.TextSegReplacedDiff { color: #0000FF; font-style: italic; }
+.TextSegSigDiff { color: #FF0000; }
+td.TextItemInsigAdd { color: #000000; background-color: #EEEEFF; }
+td.TextItemInsigDel { color: #000000; background-color: #EEEEFF; text-decoration: line-through; }
+td.TextItemSigAdd { color: #000000; background-color: #FFE3E3; }
+td.TextItemSigDel { color: #000000; background-color: #FFE3E3; text-decoration: line-through; }
+.TextSegElementKeyword { font-weight: bold; }
+.TextSegElementIdentifier { }
+.TextSegElementString { color: #3A7726; }
+.TextSegElementComment { color: #786A41; }
+.TextSegElementOperator { }
+.TextSegElementIndentation { }
+</style>
+<title>File Comparison</title>
+</head>
+<body>
+File Comparison<br>
+Produced: 10/6/20 4:03:50 PM<br>
+&nbsp; &nbsp;
+<br>
+Mode:&nbsp; All, With Context, Ignoring Unimportant &nbsp;
+<br>
+Left file: /Users/msmolyak/Projects/Cora/DeepSpeedExamples/Megatron-LM/learning_rates.py &nbsp;
+<br>
+Right file: /Users/msmolyak/Projects/Cora/DeepSpeedExamplesISI/Megatron-LM/learning_rates.py &nbsp;
+<br>
+<table class="fc" cellspacing="0" cellpadding="0">
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">1</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># coding=utf-8</span></td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">1</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># coding=utf-8</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">2</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># Copyright (c) 2019, NVIDIA CORPORATION.&nbsp; All rights reserved.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">2</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># Copyright (c) 2019, NVIDIA CORPORATION.&nbsp; All rights reserved.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">3</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">#</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">3</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">#</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">4</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">4</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">5</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># you may not use this file except in compliance with the License.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">5</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># you may not use this file except in compliance with the License.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">6</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># You may obtain a copy of the License at</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">6</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># You may obtain a copy of the License at</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">7</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">#</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">7</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">#</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">8</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">#&nbsp; &nbsp;&nbsp; http://www.apache.org/licenses/LICENSE-2.0</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">8</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">#&nbsp; &nbsp;&nbsp; http://www.apache.org/licenses/LICENSE-2.0</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">9</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">#</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">9</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">#</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">10</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># Unless required by applicable law or agreed to in writing, software</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">10</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># Unless required by applicable law or agreed to in writing, software</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">11</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">11</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">12</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">12</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">13</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># See the License for the specific language governing permissions and</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">13</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># See the License for the specific language governing permissions and</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">14</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># limitations under the License.</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">14</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment"># limitations under the License.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">15</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">&quot;&quot;&quot;PyTorch DataLoader for TFRecords&quot;&quot;&quot;</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">15</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementString">&quot;&quot;&quot;PyTorch DataLoader for TFRecords&quot;&quot;&quot;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">16</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">16</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">17</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">torch</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">17</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">torch</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">18</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">from</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">optim</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">lr_scheduler</span> <span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">_LRScheduler</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">18</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">from</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">optim</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">lr_scheduler</span> <span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">_LRScheduler</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">19</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">math</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">19</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">import</span> <span class="TextSegElementIdentifier">math</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">20</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">20</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">-+</td>
+<td class="TextItemNum AlignRight Wrap">21</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">from</span> <span class="TextSegSigDiff">utils</span> <span class="TextSegSigDiff">import</span> <span class="TextSegSigDiff">print_rank_0</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">22</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">23</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">21</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">class</span> <span class="TextSegElementIdentifier">AnnealingLR</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">_LRScheduler</span><span class="TextSegElementOperator">)</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">24</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementKeyword">class</span> <span class="TextSegElementIdentifier">AnnealingLR</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">_LRScheduler</span><span class="TextSegElementOperator">)</span>:</td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">22</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp;&nbsp; &quot;&quot;&quot;Anneals the learning rate<span class="TextSegSigDiff"> from start to zero along a cosine curve.</span>&quot;&quot;&quot;</td>
+<td class="AlignCenter Wrap">&lt;&gt;</td>
+<td class="TextItemNum AlignRight Wrap">25</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp;&nbsp; &quot;&quot;&quot;Anneals the learning rate&quot;&quot;&quot;</td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">23</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">26</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">24</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp;&nbsp; DECAY_STYLES = ['linear', 'cosine', '<span class="TextSegSigDiff">exponential'</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">'</span>constant', 'None']</td>
+<td class="AlignCenter Wrap">&lt;&gt;</td>
+<td class="TextItemNum AlignRight Wrap">27</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp;&nbsp; DECAY_STYLES = ['linear', 'cosine', 'constant', 'None']</td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">25</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">28</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">26</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp;&nbsp; def __init__(self, optimizer, start_lr, warmup_iter, num_iters, <span class="TextSegSigDiff">decay_style</span><span class="TextSegSigDiff">=</span><span class="TextSegSigDiff">None</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">last_iter</span><span class="TextSegSigDiff">=-</span><span class="TextSegSigDiff">1</span><span class="TextSegSigDiff">)</span><span class="TextSegSigDiff">:</span></td>
+<td class="AlignCenter Wrap">&lt;&gt;</td>
+<td class="TextItemNum AlignRight Wrap">29</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp;&nbsp; def __init__(self, optimizer, start_lr, warmup_iter, num_iters,</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">30</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">decay_style</span><span class="TextSegSigDiff">=</span><span class="TextSegSigDiff">None</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">last_iter</span><span class="TextSegSigDiff">=-</span><span class="TextSegSigDiff">1</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">min_lr</span><span class="TextSegSigDiff">=</span><span class="TextSegSigDiff">0.0</span><span class="TextSegSigDiff">,</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">31</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">use_checkpoint_lr_scheduler</span><span class="TextSegSigDiff">=</span><span class="TextSegSigDiff">True</span><span class="TextSegSigDiff">,</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">32</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">override_lr_scheduler</span><span class="TextSegSigDiff">=</span><span class="TextSegSigDiff">False</span><span class="TextSegSigDiff">)</span><span class="TextSegSigDiff">:</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">27</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">optimizer</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">optimizer</span></td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">33</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">optimizer</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">optimizer</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">28</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">start_lr</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">start_lr</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">34</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">start_lr</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">start_lr</span></td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">-+</td>
+<td class="TextItemNum AlignRight Wrap">35</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">min_lr</span> <span class="TextSegSigDiff">=</span> <span class="TextSegSigDiff">min_lr</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">29</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">warmup_iter</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">warmup_iter</span></td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">36</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">warmup_iter</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">warmup_iter</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">30</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">num_iters</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">last_iter</span> <span class="TextSegElementOperator">+</span> 1</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">37</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">num_iters</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">last_iter</span> <span class="TextSegElementOperator">+</span> 1</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">31</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">end_iter</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">num_iters</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">38</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">end_iter</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">num_iters</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">32</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; self.decay_style = decay_style.lower() if isinstance(decay_style, str) <span class="TextSegSigDiff">else</span> <span class="TextSegSigDiff">None</span></td>
+<td class="AlignCenter Wrap">&lt;&gt;</td>
+<td class="TextItemNum AlignRight Wrap">39</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; self.decay_style = decay_style.lower() if isinstance(decay_style, str) <span class="TextSegSigDiff">\</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">40</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">else</span> <span class="TextSegSigDiff">None</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">41</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">override_lr_scheduler</span> <span class="TextSegSigDiff">=</span> <span class="TextSegSigDiff">override_lr_scheduler</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">42</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">use_checkpoint_lr_scheduler</span> <span class="TextSegSigDiff">=</span> <span class="TextSegSigDiff">use_checkpoint_lr_scheduler</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">43</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">if</span> <span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">override_lr_scheduler</span><span class="TextSegSigDiff">:</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">44</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">assert</span> <span class="TextSegSigDiff">not</span> <span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">use_checkpoint_lr_scheduler</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">'both override and '</span><span class="TextSegSigDiff">\</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">45</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">'use-checkpoint are set.'</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">33</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">step</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">num_iters</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">46</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">step</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">num_iters</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">34</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">distributed</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">get_rank</span><span class="TextSegElementOperator">()</span> <span class="TextSegElementOperator">==</span> 0:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">47</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">torch</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">distributed</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">get_rank</span><span class="TextSegElementOperator">()</span> <span class="TextSegElementOperator">==</span> 0:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">35</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">print</span><span class="TextSegElementOperator">(</span><span class="TextSegElementString">'learning rate decaying'</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">decay_style</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">48</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">print</span><span class="TextSegElementOperator">(</span><span class="TextSegElementString">'learning rate decaying'</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">decay_style</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">36</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">49</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">37</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">get_lr</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">)</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">50</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">get_lr</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">)</span>:</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">38</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # https://openreview.net/pdf?id=BJYwwY9ll pg. 4</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">51</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; # https://openreview.net/pdf?id=BJYwwY9ll pg. 4</span></td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">-+</td>
+<td class="TextItemNum AlignRight Wrap">52</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">num_iters_</span> <span class="TextSegSigDiff">=</span> <span class="TextSegSigDiff">min</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">num_iters</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">end_iter</span> <span class="TextSegSigDiff">-</span> <span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">warmup_iter</span><span class="TextSegSigDiff">)</span></td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">39</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">warmup_iter</span> <span class="TextSegElementOperator">&gt;</span> 0 <span class="TextSegElementKeyword">and</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">num_iters</span> <span class="TextSegElementOperator">&lt;=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">warmup_iter</span>:</td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">53</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">warmup_iter</span> <span class="TextSegElementOperator">&gt;</span> 0 <span class="TextSegElementKeyword">and</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">num_iters</span> <span class="TextSegElementOperator">&lt;=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">warmup_iter</span>:</td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">40</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; return float(self.start_lr) * <span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span>num_iters / self.warmup_iter</td>
+<td class="AlignCenter Wrap">&lt;&gt;</td>
+<td class="TextItemNum AlignRight Wrap">54</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; return float(self.start_lr) * num_iters<span class="TextSegSigDiff">_</span> / self.warmup_iter</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">41</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">else</span>:</td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">55</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">else</span>:</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">42</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">decay_style</span> <span class="TextSegElementOperator">==</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">DECAY_STYLES</span><span class="TextSegElementOperator">[</span>0<span class="TextSegElementOperator">]</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">56</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">decay_style</span> <span class="TextSegElementOperator">==</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">DECAY_STYLES</span><span class="TextSegElementOperator">[</span>0<span class="TextSegElementOperator">]</span>:</td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">43</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <span class="TextSegSigDiff">return</span> self.start_lr*((self.end_iter-(<span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span>num_iters-self.warmup_iter))/self.end_iter)</td>
+<td class="AlignCenter Wrap">&lt;&gt;</td>
+<td class="TextItemNum AlignRight Wrap">57</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <span class="TextSegSigDiff">lr</span> <span class="TextSegSigDiff">=</span> self.start_lr * ((self.end_iter - (num_iters<span class="TextSegSigDiff">_</span> - self.warmup_iter)) / self.end_iter)</td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">44</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">elif</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">decay_style</span> <span class="TextSegElementOperator">==</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">DECAY_STYLES</span><span class="TextSegElementOperator">[</span>1<span class="TextSegElementOperator">]</span>:</td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">58</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">elif</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">decay_style</span> <span class="TextSegElementOperator">==</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">DECAY_STYLES</span><span class="TextSegElementOperator">[</span>1<span class="TextSegElementOperator">]</span>:</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">45</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <span class="TextSegSigDiff">return</span> self.start_lr / 2.0 * (math.cos(math.pi * (<span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span>num_iters - self.warmup_iter) / self.end_iter) + 1)</td>
+<td class="AlignCenter Wrap">&lt;&gt;</td>
+<td class="TextItemNum AlignRight Wrap">59</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <span class="TextSegSigDiff">lr</span> <span class="TextSegSigDiff">=</span> self.start_lr / 2.0 * (math.cos(math.pi * (num_iters<span class="TextSegSigDiff">_</span> - self.warmup_iter) / self.end_iter) + 1)</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">46</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">elif</span> <span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">decay_style</span> <span class="TextSegSigDiff">==</span> <span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">DECAY_STYLES</span><span class="TextSegSigDiff">[</span><span class="TextSegSigDiff">2</span><span class="TextSegSigDiff">]</span><span class="TextSegSigDiff">:</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">47</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementComment">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; #TODO: implement exponential decay</span></td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">48</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">return</span> <span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">start_lr</span></td>
+<td class="AlignCenter Wrap">+-</td>
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">49</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">else</span>:</td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">60</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">else</span>:</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">50</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <span class="TextSegSigDiff">return</span> self.start_lr</td>
+<td class="AlignCenter Wrap">&lt;&gt;</td>
+<td class="TextItemNum AlignRight Wrap">61</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <span class="TextSegSigDiff">lr</span> <span class="TextSegSigDiff">=</span> self.start_lr</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">62</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">return</span> <span class="TextSegSigDiff">max</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">lr</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">min_lr</span><span class="TextSegSigDiff">)</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">51</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">63</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">52</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">step</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">step_num</span><span class="TextSegElementOperator">=</span><span class="TextSegElementKeyword">None</span><span class="TextSegElementOperator">)</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">64</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">step</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">step_num</span><span class="TextSegElementOperator">=</span><span class="TextSegElementKeyword">None</span><span class="TextSegElementOperator">)</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">53</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">step_num</span> <span class="TextSegElementKeyword">is</span> <span class="TextSegElementKeyword">None</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">65</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">step_num</span> <span class="TextSegElementKeyword">is</span> <span class="TextSegElementKeyword">None</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">54</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">step_num</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">num_iters</span> <span class="TextSegElementOperator">+</span> 1</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">66</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">step_num</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">num_iters</span> <span class="TextSegElementOperator">+</span> 1</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">55</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">num_iters</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">step_num</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">67</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">num_iters</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">step_num</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">56</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">new_lr</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">get_lr</span><span class="TextSegElementOperator">()</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">68</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">new_lr</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">get_lr</span><span class="TextSegElementOperator">()</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">57</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">for</span> <span class="TextSegElementIdentifier">group</span> <span class="TextSegElementKeyword">in</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">optimizer</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">param_groups</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">69</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">for</span> <span class="TextSegElementIdentifier">group</span> <span class="TextSegElementKeyword">in</span> <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">optimizer</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">param_groups</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">58</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">group</span><span class="TextSegElementOperator">[</span><span class="TextSegElementString">'lr'</span><span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">new_lr</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">70</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">group</span><span class="TextSegElementOperator">[</span><span class="TextSegElementString">'lr'</span><span class="TextSegElementOperator">]</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">new_lr</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">59</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">71</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">60</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">state_dict</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">)</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">72</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">state_dict</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">)</span>:</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">61</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">sd</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementOperator">{</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">73</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">sd</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementOperator">{</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">62</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementString">'start_lr'</span>: <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">start_lr</span><span class="TextSegElementOperator">,</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">74</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementString">'start_lr'</span>: <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">start_lr</span><span class="TextSegElementOperator">,</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">63</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementString">'warmup_iter'</span>: <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">warmup_iter</span><span class="TextSegElementOperator">,</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">75</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementString">'warmup_iter'</span>: <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">warmup_iter</span><span class="TextSegElementOperator">,</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">64</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementString">'num_iters'</span>: <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">num_iters</span><span class="TextSegElementOperator">,</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">76</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementString">'num_iters'</span>: <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">num_iters</span><span class="TextSegElementOperator">,</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">65</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementString">'decay_style'</span>: <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">decay_style</span><span class="TextSegElementOperator">,</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">77</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementString">'decay_style'</span>: <span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">decay_style</span><span class="TextSegElementOperator">,</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">66</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 'end_iter': self.end_iter</td>
+<td class="AlignCenter Wrap">&lt;&gt;</td>
+<td class="TextItemNum AlignRight Wrap">78</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 'end_iter': self.end_iter<span class="TextSegSigDiff">,</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">79</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">'min_lr'</span><span class="TextSegSigDiff">:</span> <span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">min_lr</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">67</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementOperator">}</span></td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">80</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementOperator">}</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">68</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">return</span> <span class="TextSegElementIdentifier">sd</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">81</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementKeyword">return</span> <span class="TextSegElementIdentifier">sd</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">69</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">82</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">83</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">-+</td>
+<td class="TextItemNum AlignRight Wrap">84</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp;&nbsp; </span><span class="TextSegSigDiff">def</span> <span class="TextSegSigDiff">check_and_set_</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">cls_value</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">sd_value</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">name</span><span class="TextSegSigDiff">)</span><span class="TextSegSigDiff">:</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">85</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">if</span> <span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">override_lr_scheduler</span><span class="TextSegSigDiff">:</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">86</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">print_rank_0</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">' &gt; overriding {} value to {}'</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">format</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">name</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">cls_value</span><span class="TextSegSigDiff">))</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">87</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">return</span> <span class="TextSegSigDiff">cls_value</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">88</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">else</span><span class="TextSegSigDiff">:</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">89</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">if</span> <span class="TextSegSigDiff">not</span> <span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">use_checkpoint_lr_scheduler</span><span class="TextSegSigDiff">:</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">90</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">assert</span> <span class="TextSegSigDiff">cls_value</span> <span class="TextSegSigDiff">==</span> <span class="TextSegSigDiff">sd_value</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">'AnnealingLR: class input value'</span> <span class="TextSegSigDiff">\</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">91</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">'and checkpoint values for {} do not match'</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">format</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">name</span><span class="TextSegSigDiff">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">92</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">print_rank_0</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">' &gt; using checkpoint value {} for {}'</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">format</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">sd_value</span><span class="TextSegSigDiff">,</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">93</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">name</span><span class="TextSegSigDiff">))</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">94</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">return</span> <span class="TextSegSigDiff">sd_value</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">95</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">70</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">load_state_dict</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">sd</span><span class="TextSegElementOperator">)</span>:</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">96</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp;&nbsp; </span><span class="TextSegElementKeyword">def</span> <span class="TextSegElementIdentifier">load_state_dict</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">sd</span><span class="TextSegElementOperator">)</span>:</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">97</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">71</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; self.start_lr = sd['start_lr']</td>
+<td class="AlignCenter Wrap">&lt;&gt;</td>
+<td class="TextItemNum AlignRight Wrap">98</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; self.start_lr = s<span class="TextSegSigDiff">elf</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">check_and_set_</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">start_lr</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">s</span>d['start_lr']<span class="TextSegSigDiff">,</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">99</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">'learning rate'</span><span class="TextSegSigDiff">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">100</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">min_lr</span> <span class="TextSegSigDiff">=</span> <span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">check_and_set_</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">min_lr</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">sd</span><span class="TextSegSigDiff">[</span><span class="TextSegSigDiff">'min_lr'</span><span class="TextSegSigDiff">],</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">101</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">'minimum learning rate'</span><span class="TextSegSigDiff">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">72</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; self.warmup_iter = s<span class="TextSegSigDiff">d</span><span class="TextSegSigDiff">[</span><span class="TextSegSigDiff">'</span><span class="TextSegSigDiff">warmup_iter'</span><span class="TextSegSigDiff">]</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">102</td>
+<td class="TextItemSigMod Wrap">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; self.warmup_iter = s<span class="TextSegSigDiff">elf</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">check_and_set_</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">warmup_iter</span><span class="TextSegSigDiff">,</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">103</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">sd</span><span class="TextSegSigDiff">[</span><span class="TextSegSigDiff">'warmup_iter'</span><span class="TextSegSigDiff">],</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">104</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">'warmup iterations'</span><span class="TextSegSigDiff">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">105</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">end_iter</span> <span class="TextSegSigDiff">=</span> <span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">check_and_set_</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">end_iter</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">sd</span><span class="TextSegSigDiff">[</span><span class="TextSegSigDiff">'end_iter'</span><span class="TextSegSigDiff">],</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">106</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">'total number of iterations'</span><span class="TextSegSigDiff">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">107</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">decay_style</span> <span class="TextSegSigDiff">=</span> <span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">check_and_set_</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">decay_style</span><span class="TextSegSigDiff">,</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">108</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">sd</span><span class="TextSegSigDiff">[</span><span class="TextSegSigDiff">'decay_style'</span><span class="TextSegSigDiff">],</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">109</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">'decay style'</span><span class="TextSegSigDiff">)</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">110</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">73</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">num_iters</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">sd</span><span class="TextSegElementOperator">[</span><span class="TextSegElementString">'num_iters'</span><span class="TextSegElementOperator">]</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">111</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">num_iters</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">sd</span><span class="TextSegElementOperator">[</span><span class="TextSegElementString">'num_iters'</span><span class="TextSegElementOperator">]</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight Wrap">74</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">end_iter</span> <span class="TextSegSigDiff">=</span> <span class="TextSegSigDiff">sd</span><span class="TextSegSigDiff">[</span><span class="TextSegSigDiff">'end_iter'</span><span class="TextSegSigDiff">]</span></td>
+<td class="AlignCenter Wrap">+-</td>
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight Wrap">75</td>
+<td class="TextItemSigMod Wrap"><span class="TextSegSigDiff">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">self</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">decay_style</span> <span class="TextSegSigDiff">=</span> <span class="TextSegSigDiff">sd</span><span class="TextSegSigDiff">[</span><span class="TextSegSigDiff">'decay_style'</span><span class="TextSegSigDiff">]</span></td>
+<td class="AlignCenter Wrap">&nbsp;</td>
+<td class="TextItemNum AlignRight Wrap">&nbsp;</td>
+<td class="TextItemSame Wrap">&nbsp;</td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight Wrap">76</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">step</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">num_iters</span><span class="TextSegElementOperator">)</span></td>
+<td class="AlignCenter Wrap">=</td>
+<td class="TextItemNum AlignRight Wrap">112</td>
+<td class="TextItemSame Wrap"><span class="TextSegElementIndentation">&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">step</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">self</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">num_iters</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+</table>
+<br>
+</body>
+</html>
